@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Error 404</title>
+</head>
+<style>
+    *{
+    /* outline: 1px solid red; */
+}
+body {    
+    margin:0px;
+    background-color: white;
+    font-family: 'Muli', sans-serif;
+}
+.header {
+    /* background-color: #34374c; */
+    background-color: #ee2b47;
+    width:100%;
+    height: 60px;    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header__img{
+   display: flex;
+   align-items: center;
+}
+.header__img--logo {        
+    width: 45px;
+    margin-left: 15px;
+    margin-bottom: 10px;
+}
+.header__img--letras
+ {
+  align-items: center;
+  color: #f6f6f6;
+  margin-left: 5px;
+  font-size: 20px;
+  font-weight: bold;
+  
+}
+.header__menu {
+    margin-right: 10px;
+}
+.header__menu ul{
+    display: none;
+    list-style: none;
+    padding: 0px 20px 0px 10px;
+    position: absolute;
+    width: 100px;
+    text-align: right;
+    margin: 0px 0px 0px 0px;
+    background-color: #ee2b47;
+    border-radius: 10%;
+
+}    
+.header__menu:hover ul, ul:hover{
+    display: block;
+}
+.header__menu li{
+    margin: 10px 0px;
+}
+.header__menu li a{
+    color: white;
+    text-decoration: none;
+}
+.header__menu li a:hover{
+    text-decoration: underline;
+}
+.header__menu--profile {
+    margin-right: 8px;        
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.header__menu--profile img{
+    margin-right: 8px;
+    width: 50px;
+    
+}
+.header__menu--profile p{
+    margin: 0px;
+    color: white;
+}
+
+
+.box {
+  width: 300px;
+  height: 400px;
+  float: left;  
+}
+
+.text {
+  text-align: center;
+  margin-top: 56px;
+  color: #2c2e3e;
+  font-size: 1.0em;
+  font-family: sans-serif;
+  text-transform: uppercase;
+}
+
+.animated {
+  animation-duration: 2.5s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+  40% {transform: translateY(-30px);}
+  60% {transform: translateY(-15px);}
+}
+.bounce {
+  animation-name: bounce;
+}
+
+
+.footer{
+    background-color: #ee2b47;
+    display: flex;
+    align-items: center;
+    height: 60px;
+    width: 100%;
+}
+.footer a{
+    color:white;
+    cursor: pointer;
+    font-size: 14px;
+    padding-left:30px;
+    text-decoration: none;
+}
+.footer a:hover{
+    text-decoration: underline;
+}
+
+@media only screen and (max-width: 600px) {
+      
+    .footer {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+
+  }
+</style>
+<body>
+    <header class="header">
+            <div class="header__img">
+                <img class="header__img--logo" src="images/tomate-ico.png" alt="Tomate"> 
+                <span class="header__img--letras">Makipedia</span>
+            </div>        
+            <div class="header__menu">
+                <div class="header__menu--profile">
+                    <img src="images/Maki icono.png" alt="User">
+                    <p>Perfil</p>
+                </div>
+                <ul>
+                    <li><a href="/">Cuenta</a></li>
+                    <li><a href="/">Cerrar Sesión</a></li>
+                </ul>
+            </div>
+    </header>
+
+    <section class="error-404">
+        <div class="error-404__caja">
+            <div class="text animated bounce">Error 404</div>
+        </div>
+        <img src="images/error-404.png">
+    </section>
+
+    <footer class="footer">
+            <a href="/">Terminos de Uso</a>
+            <a href="/">Declaración de privacidad</a>
+            <a href="/">Centro de ayuda</a>
+    </footer>       
+</body>
+</html>
