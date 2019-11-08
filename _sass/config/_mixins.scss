@@ -3,3 +3,11 @@
         @content;
     }   
 }
+
+@mixin flex-center($direction:row){
+    flex-direction: $direction;
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+}
+

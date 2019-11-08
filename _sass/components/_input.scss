@@ -1,4 +1,4 @@
-.input{            
+%input{
     border: 2px solid white;    
     color: white;
     font-family: 'Muli', sans-serif;
@@ -8,24 +8,25 @@
     margin: auto;    
     display: flex;
     justify-content: center;
+}
+
+.input{                
     &--login{
+        @extend %input;
         background-color:transparent;        
         border-left: 0px;
         border-right: 0px;
         border-top:0px;                        
-        margin-bottom: 20px;        
+        margin: 0px 0px 20px 0px;        
         outline:none;        
     }
     &--buscar{
+        @extend %input;
         background-color: rgba(255,255,255,0.1);
         border-radius: 30px;
         width: 70%;        
         outline-style: none;
     }
-}
-
-.input{
-    
 }
 
 ::placeholder{
