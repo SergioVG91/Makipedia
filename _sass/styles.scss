@@ -1,0 +1,17 @@
+@import "config/_variables";
+@import "config/_mixins";
+@import "components/_button";
+@import "components/_input";
+@import "components/_carousel";
+@import "layout/_header";
+@import "layout/_footer";
+@import "layout/_login";
+
+
+body {
+    margin:0px;
+    background-color: #2c2e3e;
+    font-family: 'Muli', sans-serif;
+}
+
+

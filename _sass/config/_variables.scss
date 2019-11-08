@@ -1,0 +1,24 @@
+//$Colores
+
+$color-texto: white; //Color de texto
+$color-titulo: white; //Color de titulos
+$color-fondo:#ee2b47;//Color de fondo
+$color-header-fondo: #ee2b47;//Color del bg del header
+$color-footer-fondo: #ee2b47;//Color del bg del footer
+$color-twitter:#00acee;
+$color-google:#DB4437;
+$color-transparencia-media: rgba(255,255,255,0.3);
+$color-transparencia-baja: rgba(255,255,255,0.1);
+$color-transparencia-alta: rgba(255,255,255,1);
+
+//$Tipografía
+$fuente-base: 'Muli', sans-serif;
+$fuente-volumen-base: 14px;
+
+$fuente-boton: $fuente-base;
+$fuente-boton-color: $color-texto;
+$fuente-boton-volumen: $fuente-volumen-base + 2px;
+
+
+
+//$Constantes

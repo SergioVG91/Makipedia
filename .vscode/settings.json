@@ -1,0 +1,13 @@
+{
+    "workbench.settings.useSplitJSON": true,
+    "liveSassCompile.settings.formats": [
+        {
+          "format": "expanded",
+          "extensionName": ".css",
+          "savePath": "/css"
+        }
+      ]
+}
+
+
+
