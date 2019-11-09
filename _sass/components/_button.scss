@@ -18,8 +18,6 @@
 
     &--back{     
         @extend %button;
-        grid-column-start: 2 ;  
-        grid-row-start: 4;
         background-color: $color-transparencia-media;
         width: 200px;                
         justify-self: center;

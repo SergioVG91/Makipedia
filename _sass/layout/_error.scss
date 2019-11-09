@@ -1,31 +1,33 @@
 .error-404{    
+    min-height: calc(100vh - #{$size_header} - #{$size_footer});
     @extend %flex-center; 
     display:grid;
-    grid-template-rows: 20% 20% 20% 20% 20%;
-    grid-template-columns: 20% 20% 20% 20% 20%;    
+    grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+    grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
     &__caja{ 
-      grid-column-start: 2 ;  
-      grid-row-start: 2;
+      grid-area: 2 /3 / 4 / 6;     
     }
     & p{
-      grid-column-start: 2 ;  
-      grid-row-start: 3;    
+      grid-area: 4 / 3 / 6 / 6;      
       justify-self: center;
       align-self: center;
-      font-size: 24px;
-      font-weight: bold;
-      color: white;  
+      @extend %style_title_bold;
     }
     & img{
-      grid-column-start: 4 ;  
-      grid-row-start: 2;
-      width: 300px;
+      grid-area: 2 / 6 / 8 / 9;   
+      width: 350px;
       justify-self: left;
     }
+    & .button--back{
+      grid-area: 6/3/8/6;
+    }    
 }
+
+
 
 @include respond-to{
   .error-404{
+    display:flex;
     @include flex-center-direction(column);                
     & img{
       width:200px;

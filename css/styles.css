@@ -16,7 +16,7 @@
   color: white;
 }
 
-.main__title, .header__img--letras {
+.main__title, .header__img--letras, .error-404 p {
   font-family: "Muli", sans-serif;
   font-size: 22px;
   color: white;
@@ -77,10 +77,6 @@
 }
 
 .button--back {
-  -ms-grid-column: 2;
-      grid-column-start: 2;
-  -ms-grid-row: 4;
-      grid-row-start: 4;
   background-color: rgba(255, 255, 255, 0.3);
   width: 200px;
   -ms-grid-column-align: center;
@@ -289,7 +285,7 @@
 }
 
 .header__menu {
-  margin-right: 10px;
+  margin-right: 18px;
 }
 
 .header__menu:hover ul, .header__menu ul:hover {
@@ -497,48 +493,60 @@
 }
 
 .error-404 {
+  min-height: calc(100vh - 60px - 60px);
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: 20% 20% 20% 20% 20%;
-      grid-template-rows: 20% 20% 20% 20% 20%;
-  -ms-grid-columns: 20% 20% 20% 20% 20%;
-      grid-template-columns: 20% 20% 20% 20% 20%;
+  -ms-grid-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+      grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+  -ms-grid-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+      grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
 }
 
 .error-404__caja {
-  -ms-grid-column: 2;
-      grid-column-start: 2;
   -ms-grid-row: 2;
-      grid-row-start: 2;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 3;
+  grid-area: 2 /3 / 4 / 6;
 }
 
 .error-404 p {
-  -ms-grid-column: 2;
-      grid-column-start: 2;
-  -ms-grid-row: 3;
-      grid-row-start: 3;
+  -ms-grid-row: 4;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 3;
+  grid-area: 4 / 3 / 6 / 6;
   -ms-grid-column-align: center;
       justify-self: center;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
-  font-size: 24px;
-  font-weight: bold;
-  color: white;
 }
 
 .error-404 img {
-  -ms-grid-column: 4;
-      grid-column-start: 4;
   -ms-grid-row: 2;
-      grid-row-start: 2;
-  width: 300px;
+  -ms-grid-row-span: 6;
+  -ms-grid-column: 6;
+  -ms-grid-column-span: 3;
+  grid-area: 2 / 6 / 8 / 9;
+  width: 350px;
   -ms-grid-column-align: left;
       justify-self: left;
 }
 
+.error-404 .button--back {
+  -ms-grid-row: 6;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 3;
+  grid-area: 6/3/8/6;
+}
+
 @media only screen and (max-width: 600px) {
   .error-404 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
