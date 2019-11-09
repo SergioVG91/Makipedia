@@ -1,15 +1,12 @@
 .footer{
-    background-color: #ee2b47;
+    background-color: $color-footer-fondo;
     display: flex;
     align-items: center;
-    height: 60px;
-
-    
+    height: $size_footer;    
     width: 100%;
     & a{
-        color:white;
-        cursor: pointer;
-        font-size: 14px;
+        @extend %style_text;
+        cursor: pointer;        
         padding-left:30px;
         text-decoration: none;
         &:hover{
@@ -17,6 +14,6 @@
         }
     }
     @include respond-to{
-        @include flex-center(column);            
+        @include flex-center-direction(column);            
     }
 }

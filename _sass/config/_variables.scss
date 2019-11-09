@@ -2,7 +2,7 @@
 
 $color-texto: white; //Color de texto
 $color-titulo: white; //Color de titulos
-$color-fondo:#ee2b47;//Color de fondo
+$color-fondo: #2c2e3e;//Color de fondo
 $color-header-fondo: #ee2b47;//Color del bg del header
 $color-footer-fondo: #ee2b47;//Color del bg del footer
 $color-twitter:#00acee;
@@ -13,12 +13,16 @@ $color-transparencia-alta: rgba(255,255,255,1);
 
 //$Tipografía
 $fuente-base: 'Muli', sans-serif;
+
+$fuente-volumen-bajo: 10px;
 $fuente-volumen-base: 14px;
+$fuente-volumen-componente:16px;
+$fuente-volumen-titulos: 20px;
+$fuente-volumen-titulos-bold: 22px;
 
-$fuente-boton: $fuente-base;
-$fuente-boton-color: $color-texto;
-$fuente-boton-volumen: $fuente-volumen-base + 2px;
-
-
+$fuente-componente: $fuente-base;
+$fuente-componente-color: $color-texto;
 
 //$Constantes
+$size_header:60px;
+$size_footer:60px;

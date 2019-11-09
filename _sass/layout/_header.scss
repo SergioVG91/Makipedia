@@ -1,7 +1,7 @@
 .header {   
     background-color: $color-header-fondo;
     width:100%;
-    height: 60px;    
+    height: $size_header;    
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -15,38 +15,33 @@
             margin-bottom: 10px;
         }
         &--letras{
-        align-items: center;
-        color: #f6f6f6;
-        margin-left: 5px;
-        font-size: 20px;
-        font-weight: bold;
-
+            align-items: center;            
+            margin-left: 5px;            
+            @extend %style_title_bold;
         }
     }
 
     &__menu {
-        margin-right: 10px;
-        
+        margin-right: 10px;        
         &:hover ul, ul:hover{
             display: block;
         }
-
         & ul{
             display: none;
             list-style: none;
-            padding: 0px 15px 0px 10px;
+            padding: 0px 18px 0px 10px;
             position: absolute;
             width: 100px;
             text-align: right;
             margin: 0px 0px 0px -13px;
-            background-color: #ee2b47;
+            background-color: $color-header-fondo;
             border-radius: 10%;        
         }
 
         & li{
             margin: 10px 0px;
             & a{
-                color: white;
+                @extend %style_text;
                 text-decoration: none;
                 &:hover{
                     text-decoration: underline;
@@ -70,7 +65,7 @@
 
         &--profile p{
             margin: 0px;
-            color: white;
+            @extend %style_text;
         }
     
     }

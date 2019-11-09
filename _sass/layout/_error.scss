@@ -1,18 +1,42 @@
-.contenido{
-    min-height: calc(100vh - 120px);   
-    background-color: white;     
+.error-404{    
+    @extend %flex-center; 
+    display:grid;
+    grid-template-rows: 20% 20% 20% 20% 20%;
+    grid-template-columns: 20% 20% 20% 20% 20%;    
+    &__caja{ 
+      grid-column-start: 2 ;  
+      grid-row-start: 2;
+    }
+    & p{
+      grid-column-start: 2 ;  
+      grid-row-start: 3;    
+      justify-self: center;
+      align-self: center;
+      font-size: 24px;
+      font-weight: bold;
+      color: white;  
+    }
+    & img{
+      grid-column-start: 4 ;  
+      grid-row-start: 2;
+      width: 300px;
+      justify-self: left;
+    }
 }
 
-.error-404{    
-    display:grid;
-    grid-template-rows: 10% 30% 10% 50%;
-    grid-template-columns: 10% 40% 5% 25% 20%;    
+@include respond-to{
+  .error-404{
+    @include flex-center-direction(column);                
+    & img{
+      width:200px;
+    }
+  }  
 }
 
 .text { 
   text-align: center;
   margin-top: 56px;
-  color: #2c2e3e;  
+  color: white;  
   font-size: 50px;
   font-weight: bold;
 }
@@ -32,60 +56,3 @@
   animation-name: bounce;
 }
 
-.error-404__caja{
-    grid-column-start: 2 ;  
-    grid-row-start: 2;
-}
-
-.error-404 p{    
-    grid-column-start: 2 ;  
-    grid-row-start: 3;    
-    justify-self: center;
-    align-self: center;
-    font-size: 24px;
-    font-weight: bold;
-    color: #2c2e3e;  
-}
-
-.error-404 img{
-    grid-column-start: 4 ;  
-    grid-row-start: 2;
-    width: 300px;
-    justify-self: left;
-}
-
-.error-404 button{    
-    justify-self: center;
-    grid-column-start: 2 ;  
-    grid-row-start: 4;
-    background-color: #2c2e3e;
-    border: 0px ;
-    border-radius: 10px;
-    cursor: pointer;
-    padding: 5px 40px;
-    font-size: 16px;   
-    font-weight: bold;
-    font-family: 'Muli', sans-serif;
-    height:50px;        
-    width: 200px;
-    margin: 10px 0px;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-@media only screen and (max-width: 600px) {
-      
-    .error-404{    
-        display:flex;
-        flex-direction: column;      
-        align-items: center;
-        justify-content: center;      
-    }
-    .error-404 img{
-        width:200px;
-    }
-    
-
-  }
