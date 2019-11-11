@@ -1,6 +1,5 @@
 .login{
-    background: #2c2e3e;
-    color: white; 
+    color: $color-texto; 
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -10,7 +9,7 @@
     
     &__container{
         background-color: rgba(255,255,255,0.1);
-        border: 2px solid white;
+        border: 2px solid $color-contorno;
         border-radius: 40px;
         padding: 60px 68px;
         min-height: 700px;
@@ -39,7 +38,7 @@
         margin-top: 10px;
         & a{
             text-decoration: none;
-            color:white;
+            color:$color-texto;
             &:hover{
                 text-decoration: underline;
             }
@@ -59,7 +58,7 @@
             font-size: 16px;        
             font-weight: bold;
             text-decoration: none;
-            color:white;
+            color:$color-texto;
             &:hover{        
                 text-decoration: underline;
             }
@@ -73,7 +72,7 @@
             font-size: 16px;        
             font-weight: bold;
             text-decoration: none;
-            color:white;
+            color:$color-texto;
             a:hover{        
                 text-decoration: underline;
             }

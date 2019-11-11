@@ -39,7 +39,7 @@
 
 %input{
     @extend %style_componente;
-    border: 2px solid white;            
+    border: 2px solid $color-contorno;            
     padding: 0px 20px;        
     margin: auto;    
     display: flex;

@@ -368,7 +368,6 @@
 }
 
 .login {
-  background: #2c2e3e;
   color: white;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -610,7 +609,7 @@
 }
 
 * {
-  outline: 2px solid red;
+  /*  outline: 2px solid red;*/
 }
 
 html, body {
