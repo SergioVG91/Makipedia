@@ -1,6 +1,6 @@
-@import "config/_variables";
-@import "config/_placeholders";
-@import "config/_mixins";
+@import "base/_variables";
+@import "base/_placeholders";
+@import "base/_mixins";
 @import "components/_button";
 @import "components/_input";
 @import "components/_carousel";
@@ -9,7 +9,7 @@
 @import "layout/_login";
 @import "layout/_error";
 @import "layout/_main";
-
+@import "layout/_juego_secuencia";
 
 
 
