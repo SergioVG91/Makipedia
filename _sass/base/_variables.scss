@@ -11,11 +11,17 @@ $color-header-fondo: #ee2b47;//Color del bg del header
 $color-footer-fondo: #ee2b47;//Color del bg del footer
 $color-twitter:#00acee;
 $color-google:#DB4437;
+$color-lovelive: #ea3599;
 $color-transparencia-media: rgba(255,255,255,0.3);
 $color-transparencia-baja: rgba(255,255,255,0.1);
 $color-transparencia-alta: rgba(255,255,255,0.8);
 
 //$Tipografía
+@font-face {
+    font-family: 'LidoSTF' ;
+    src: url('../fonts/LISTFCEB_.ttf') format('truetype');
+ }
+$fuente-lovelive: 'LidoSTF', sans-serif ;
 $fuente-base: 'Muli', sans-serif;
 
 $fuente-volumen-bajo: 10px;

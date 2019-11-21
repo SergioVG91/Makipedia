@@ -12,19 +12,43 @@
         <div class="header__img">
             <img class="header__img--logo" src="../images/tomate-ico.png" alt="Tomate"> 
             <span class="header__img--letras">Makipedia</span>
-        </div>                
+        </div>        
+        <div class="header__menu">
+            <div class="header__menu--profile">
+                <img src="../images/Maki icono.png" alt="User">
+                <p>Perfil</p>
+            </div>
+            <ul>
+                <li><a href="/">Cuenta</a></li>
+                <li><a href="/">Cerrar Sesión</a></li>
+            </ul>
+        </div>
     </header>
     <div class="contenido">
-        <section class="juego__secuencia">
-            <img id="img_round_maki_ur_0" class="juego__secuencia--0" src="../images/round_maki_ur_0.png" data-card="0">            
-            <img id="img_round_maki_ur_1" class="juego__secuencia--1" src="../images/round_maki_ur_1.png" data-card="1">
-            <img id="img_round_maki_ur_2" class="juego__secuencia--2" src="../images/round_maki_ur_2.png" data-card="2">
-            <img id="img_round_maki_ur_3" class="juego__secuencia--3" src="../images/round_maki_ur_3.png" data-card="3">
-            <img id="img_round_maki_ur_4" class="juego__secuencia--4" src="../images/round_maki_ur_4.png" data-card="4">
-            <img id="img_round_maki_ur_5" class="juego__secuencia--5" src="../images/round_maki_ur_5.png" data-card="5">
-            <img id="img_round_maki_ur_6" class="juego__secuencia--6" src="../images/round_maki_ur_6.png" data-card="6">
-            <img id="img_round_maki_ur_7" class="juego__secuencia--7" src="../images/round_maki_ur_7.png" data-card="7">            
-            <button id="btn_empezar_juego_maki" class="button--transparente" onclick="empezarJuegoMaki()">Iniciar juego</button>
+        <section class="sound__secuencia">
+            <audio id="sound_do" src="../sound/do.wav"></audio>
+            <audio id="sound_re" src="../sound/re.wav"></audio>
+            <audio id="sound_mi" src="../sound/mi.wav"></audio>
+            <audio id="sound_fa" src="../sound/fa.wav"></audio>
+            <audio id="sound_sol" src="../sound/sol.wav"></audio>
+            <audio id="sound_la" src="../sound/la.wav"></audio>
+            <audio id="sound_si" src="../sound/si.wav"></audio>
+            <audio id="sound_do8" src="../sound/do8.wav"></audio>
+            <audio id="sound_win" src="../sound/win_maki.mp3"></audio>
+            <audio id="sound_lose" src="../sound/fail_maki.mp3"></audio>
+        </section>
+        <section class="juego">
+            <section class="juego__secuencia">
+                <img id="img_round_maki_ur_0" class="juego__secuencia--0" src="../images/round_maki_ur_0.png" data-card="0">            
+                <img id="img_round_maki_ur_1" class="juego__secuencia--1" src="../images/round_maki_ur_1.png" data-card="1">
+                <img id="img_round_maki_ur_2" class="juego__secuencia--2" src="../images/round_maki_ur_2.png" data-card="2">
+                <img id="img_round_maki_ur_3" class="juego__secuencia--3" src="../images/round_maki_ur_3.png" data-card="3">
+                <img id="img_round_maki_ur_4" class="juego__secuencia--4" src="../images/round_maki_ur_4.png" data-card="4">
+                <img id="img_round_maki_ur_5" class="juego__secuencia--5" src="../images/round_maki_ur_5.png" data-card="5">
+                <img id="img_round_maki_ur_6" class="juego__secuencia--6" src="../images/round_maki_ur_6.png" data-card="6">
+                <img id="img_round_maki_ur_7" class="juego__secuencia--7" src="../images/round_maki_ur_7.png" data-card="7">            
+                <button id="btn_empezar_juego_maki" class="button--juego-secuencia">Live!</button>
+            </section>
         </section>
     </div>
     <footer class="footer">
