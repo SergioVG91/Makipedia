@@ -59,7 +59,7 @@ class Juego{
     }
 
     
-    iluminarMaki(numMaki){          
+    iluminarMaki(numMaki){                  
         const nombre = `img_maki_${numMaki}` 
         this.imagenes[nombre].classList.remove('apagar') 
         this.generarSonido(numMaki)               
@@ -182,6 +182,7 @@ class Juego{
     }
     
     clickMaki(evento){
+       // console.log(this)
         const numMaki = parseInt(evento.target.dataset.card)
         this.iluminarMaki(numMaki)
         if(numMaki === this.secuencia[this.subnivel]){            
