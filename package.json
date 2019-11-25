@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/SergioVG91/Makipedia#readme",
   "devDependencies": {
+    "eslint": "^6.7.0",
     "live-server": "^1.2.1"
   }
 }
