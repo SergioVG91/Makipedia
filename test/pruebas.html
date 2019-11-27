@@ -7,45 +7,11 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <input id="#input">
+    <input id="#input2">
 </body>
+<script src="test.ts"></script>
 <script>
-    class persona{
-        constructor(){
-            this.name = 'Gab'
-        }
-        saludar(){
-            console.log(`Clase: ${this}`)                
-            return this;
-        }
-
-        saludarName(){
-            console.log(`Clase name: ${this.name}`)    
-            return this.name;
-        }
-    }
-
-    console.log(`Main: ${this}`)
-    function prueba(){
-        this.name = 'pruebita'
-        console.log(`Prueba name: ${this.name}`)
-        console.log(`Prueba: ${this}`)
-        return this;
-    }
-
-    function prueba2(){
-        this.name = 'pruebita2'
-        console.log(`Prueba name: ${this.name}`)
-        console.log(`Prueba: ${this}`)
-        return this;
-    }
-    const name = 'wiw'    
-    const gab = new persona()
-    console.log(`Return: `+ prueba2())
-    console.log(`Return: `+ prueba())
-    console.log(`Return clase: `+ gab.saludar())
-    console.log(`Return clase name: `+ gab.saludarName())
-    console.log(`Main const name: `+ this.name)
-    console.log(`Return: `+ prueba2())
+    
 </script>
 </html>
