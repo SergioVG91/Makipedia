@@ -1,0 +1,33 @@
+Ads:
+Crear instancia
+get instancia
+get add
+inicializar ads
+
+interfaz con url, titulo, informacion, imgurl
+
+Plugin:
+crear run
+	'timeupdate' 
+handletimeuodate
+	.currenttime
+renderizar los add por consola
+
+
+MediaPlayer:
+Crear un contenedor para el video
+parentNode.insertBefore
+appendchild
+
+
+Plugin:
+agregar la creacion del contenedor en el constructor
+en el run agregarle codigo con appendChild
+en el render agregar con innerHTML:
+	DIV 
+		A URL
+			IMG
+			DIV
+				TIT
+				INFO	
+Despues de un rato (7s) borrarlos
