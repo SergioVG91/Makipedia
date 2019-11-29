@@ -1,10 +1,14 @@
 class MediaPlayer {  
   media:HTMLVideoElement
   plugins:Array<any>
+  contenedor:HTMLElement
+
   constructor(config) {
     this.media = config.el;
     this.plugins = config.plugins || [];
+    this.initContenido()
     this.initPlugins();
+    
     
   }
   private initPlugins() {    
@@ -12,6 +16,14 @@ class MediaPlayer {
       element.run(this);
     });
   }
+
+  private initContenido(){
+    this.contenedor = document.createElement('div')
+    this.contenedor.style.position = 'relative'
+    this.media.parentNode.insertBefore(this.contenedor,this.media)
+    this.contenedor.appendChild(this.media);
+  }
+
   fplay() {
     this.media.play();
   }

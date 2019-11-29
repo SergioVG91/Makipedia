@@ -1,4 +1,4 @@
-interface Ad {
+export interface Ad {
   url: string;
   imgUrl: string;
   titulo: string;
@@ -8,46 +8,50 @@ interface Ad {
 const LISTA_DE_ADS = [
   {
     url: "/",
-    imgUrl: "/images/ad1",
+    imgUrl: "/images/ad1.png",
     titulo: "Evento de Maki 1",
     informacion: "Click para jugar"
   },
   {
     url: "/",
-    imgUrl: "/images/ad2",
+    imgUrl: "/images/ad2.png",
     titulo: "Evento de Maki 2",
     informacion: "Click para jugar"
   },
   {
     url: "/",
-    imgUrl: "/images/ad3",
+    imgUrl: "/images/ad3.png",
     titulo: "Evento de Maki 3",
     informacion: "Click para jugar"
   },
   {
     url: "/",
-    imgUrl: "/images/ad4",
+    imgUrl: "../images/ad4.png",
     titulo: "Evento de Maki 4",
     informacion: "Click para jugar"
   }
 ];
 
 class Ads {
+  private static instancia: Ads
   private ads: Ad[];
-  private currentAd: Ad;
 
   private constructor() {
     this.initAds();
   }
 
-  getInstancia() {}
+  static getInstancia() {
+    if(!Ads.instancia){
+      Ads.instancia = new Ads()
+    }
+    return Ads.instancia
+  }
 
-  private getAd() {
+  getAd() {
     if (this.ads.length == 0) {
       this.initAds();
-    }
-    this.currentAd = this.ads.pop();
-    return this.currentAd;
+    }    
+    return this.ads.pop();
   }
 
   private initAds() {
