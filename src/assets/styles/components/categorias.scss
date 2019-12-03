@@ -1,0 +1,9 @@
+.categories {
+  @extend %margenes_verticales;
+  &__title {
+    @extend %style_title;
+    padding-left: 30px;
+    /*width: 100%; Le aumenta al 100% 30px extra por lo que provoca scroll horizontal    
+        */
+  }
+}

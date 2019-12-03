@@ -1,0 +1,23 @@
+.main {
+  height: 100px;
+  @extend %margenes_verticales;
+
+  &__title {
+    @extend %style_title_bold;
+    @extend %flex-center;
+  }
+}
+
+.input {
+  &--buscar {
+    @extend %input;
+    background-color: $color-transparencia-media;
+    border-radius: 30px;
+    width: 70%;
+    outline-style: none;
+  }
+}
+
+::placeholder {
+  color: $color-contorno;
+}
