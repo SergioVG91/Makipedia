@@ -10,68 +10,48 @@ import CarouselItem from '../components/CarouselItem';
 
 const API = 'http://localhost:3000/initialState';
 
-const existe = (cadena) => {
-  if (cadena.length > 0) return true;
-  return false;
+const crearCarrousel = (cadena) => {
+  const carousel = [];
+  const nombres = Object.keys(cadena);
+  nombres.forEach((seccion) => {
+    if (cadena[seccion].length > 0) {
+      const hijos = [];
+      for (let i = 0; i < cadena[seccion].length; i++) {
+        hijos.push(
+          cadena[seccion].map((item) => (
+            <CarouselItem
+              key={item.id}
+              titulo={item.title}
+              descripcion={item.description}
+              source={item.source}
+            />
+          )),
+        );
+      }
+      const nombreTitle = `Lista de cartas ${seccion.slice(8)}`;
+      carousel.push(
+        <Categorias key={seccion} title={nombreTitle}>
+          <CarouselContenedor key={`${seccion}_hijo`}>{hijos}</CarouselContenedor>
+        </Categorias>,
+      );
+    }
+  });
+  console.log(carousel);
+  return carousel;
 };
 
 const App = () => {
-  let existeUR = false;
-  let existeSR = false;
-  let existeSSR = false;
+  let carouselHtml;
   const imagenes = useInitialState(API);
   if (imagenes !== undefined) {
-    existeUR = existe(imagenes.imagenesUR);
-    existeSR = existe(imagenes.imagenesSR);
-    existeSSR = existe(imagenes.imagenesSSR);
+    carouselHtml = crearCarrousel(imagenes);
   }
 
   return (
     <div className="App">
       <Header />
       <Buscador />
-      {existeUR && (
-        <Categorias title="Lista de Cartas UR">
-          <CarouselContenedor>
-            {imagenes.imagenesUR.map((item) => (
-              <CarouselItem
-                key={item.id}
-                titulo={item.title}
-                descripcion={item.description}
-                source={item.source}
-              />
-            ))}
-          </CarouselContenedor>
-        </Categorias>
-      )}
-      {existeSSR && (
-        <Categorias title="Lista de Cartas SSR">
-          <CarouselContenedor>
-            {imagenes.imagenesSSR.map((item) => (
-              <CarouselItem
-                key={item.id}
-                titulo={item.title}
-                descripcion={item.description}
-                source={item.source}
-              />
-            ))}
-          </CarouselContenedor>
-        </Categorias>
-      )}
-      {existeSR && (
-        <Categorias title="Lista de Cartas SR">
-          <CarouselContenedor>
-            {imagenes.imagenesSR.map((item) => (
-              <CarouselItem
-                key={item.id}
-                titulo={item.title}
-                descripcion={item.description}
-                source={item.source}
-              />
-            ))}
-          </CarouselContenedor>
-        </Categorias>
-      )}
+      {carouselHtml}
       <Footer />
     </div>
   );
