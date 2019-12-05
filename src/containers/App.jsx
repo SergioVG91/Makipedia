@@ -16,18 +16,19 @@ const crearCarrousel = (cadena) => {
   nombres.forEach((seccion) => {
     if (cadena[seccion].length > 0) {
       const hijos = [];
-      for (let i = 0; i < cadena[seccion].length; i++) {
-        hijos.push(
-          cadena[seccion].map((item) => (
+      hijos.push(
+        cadena[seccion].map((item) => {
+          console.log(item);
+          return (
             <CarouselItem
               key={item.id}
               titulo={item.title}
               descripcion={item.description}
               source={item.source}
             />
-          )),
-        );
-      }
+          );
+        }),
+      );
       const nombreTitle = `Lista de cartas ${seccion.slice(8)}`;
       carousel.push(
         <Categorias key={seccion} title={nombreTitle}>
@@ -36,7 +37,6 @@ const crearCarrousel = (cadena) => {
       );
     }
   });
-  console.log(carousel);
   return carousel;
 };
 
