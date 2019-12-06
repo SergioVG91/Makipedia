@@ -1,8 +1,0 @@
-.button {
-  &--back {
-    @extend %button;
-    background-color: $color-transparencia-media;
-    width: 200px;
-    justify-self: center;
-  }
-}

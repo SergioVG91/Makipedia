@@ -1,14 +1,11 @@
 import React from 'react';
 import '../assets/styles/App.scss';
-import useInitialState from '../hooks/useInitialState';
-import Header from '../components/Header';
+import { connect } from 'react-redux';
+//import useInitialState from '../hooks/useInitialState';
 import Buscador from '../components/Buscador';
-import Footer from '../components/Footer';
 import Categorias from '../components/Categorias';
 import CarouselContenedor from '../components/CarouselContenedor';
 import CarouselItem from '../components/CarouselItem';
-
-const API = 'http://localhost:3000/initialState';
 
 const crearCarrousel = (cadena) => {
   const carousel = [];
@@ -39,21 +36,28 @@ const crearCarrousel = (cadena) => {
   return carousel;
 };
 
-const Home = () => {
+const Home = ({ imagenesSR, imagenesSSR, imagenesUR }) => {
   let carouselHtml;
-  const imagenes = useInitialState(API);
+  const imagenes = [imagenesSR, imagenesSSR, imagenesUR];
+  console.log(imagenes);
   if (imagenes !== undefined) {
     carouselHtml = crearCarrousel(imagenes);
   }
 
   return (
-    <div className="App">
-      <Header />
+    <>
       <Buscador />
       {carouselHtml}
-      <Footer />
-    </div>
+    </>
   );
 };
 
-export default Home;
+const mapStateToProps = (state) => {
+  return {
+    imagenesSR: state.imagenesSR,
+    imagenesSSR: state.imagenesSSR,
+    imagenesUR: state.imagenesUR,
+  };
+};
+
+export default connect(mapStateToProps, null)(Home);

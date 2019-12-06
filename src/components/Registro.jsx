@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../assets/styles/components/registro.scss';
 
 const Registro = () => (
@@ -16,7 +17,7 @@ const Registro = () => (
         </form>
 
         <p className="register__init">
-          <a href="/">Iniciar sesión</a>
+          <Link to="/login">Iniciar sesión</Link>
         </p>
       </section>
     </section>
