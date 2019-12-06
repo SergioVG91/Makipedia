@@ -18,7 +18,6 @@ const crearCarrousel = (cadena) => {
       const hijos = [];
       hijos.push(
         cadena[seccion].map((item) => {
-          console.log(item);
           return (
             <CarouselItem
               key={item.id}
@@ -40,7 +39,7 @@ const crearCarrousel = (cadena) => {
   return carousel;
 };
 
-const App = () => {
+const Home = () => {
   let carouselHtml;
   const imagenes = useInitialState(API);
   if (imagenes !== undefined) {
@@ -57,4 +56,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Home;

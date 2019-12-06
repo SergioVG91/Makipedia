@@ -1,0 +1,105 @@
+.login {
+  color: $color-texto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 30px;
+  min-height: calc(100vh - 120px);
+
+  &__container {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid $color-contorno;
+    border-radius: 40px;
+    padding: 60px 68px;
+    min-height: 700px;
+    width: 300px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+
+    @include respond-to {
+      background-color: transparent;
+      border: none;
+      padding: 0px;
+      width: 100%;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__remember-me {
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    & a {
+      text-decoration: none;
+      color: $color-texto;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__social-media {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__register {
+    font-size: 14px;
+    & a {
+      font-size: 16px;
+      font-weight: bold;
+      text-decoration: none;
+      color: $color-texto;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.button {
+  &--transparente {
+    @extend %button;
+    background-color: $color-transparencia-media;
+    border-radius: 25px;
+    letter-spacing: 1px;
+  }
+
+  &--twitter {
+    @extend %button;
+    background-color: $color-twitter;
+  }
+
+  &--google {
+    @extend %button;
+    background-color: $color-google;
+  }
+  &__icon {
+    width: 16px;
+    margin-right: 10px;
+  }
+}
+
+.input {
+  &--login {
+    @extend %input;
+    background-color: transparent;
+    border-left: 0px;
+    border-right: 0px;
+    border-top: 0px;
+    margin: 0px 0px 20px 0px;
+    outline: none;
+  }
+}
+
+::placeholder {
+  color: $color-contorno;
+}
