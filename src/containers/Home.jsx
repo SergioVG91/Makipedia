@@ -38,7 +38,7 @@ const crearCarrousel = (cadena) => {
 
 const Home = ({ imagenesSR, imagenesSSR, imagenesUR }) => {
   let carouselHtml;
-  const imagenes = [imagenesSR, imagenesSSR, imagenesUR];
+  const imagenes = { imagenesSR, imagenesSSR, imagenesUR };
   console.log(imagenes);
   if (imagenes !== undefined) {
     carouselHtml = crearCarrousel(imagenes);
