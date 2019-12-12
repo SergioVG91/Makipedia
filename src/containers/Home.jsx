@@ -13,14 +13,18 @@ const crearCarrousel = (cadena) => {
   nombres.forEach((seccion) => {
     if (cadena[seccion].length > 0) {
       const hijos = [];
+      let esFavorito = false;
+      if (seccion === 'imagenesFavoritas') esFavorito = true;
       hijos.push(
         cadena[seccion].map((item) => {
           return (
             <CarouselItem
               key={item.id}
-              titulo={item.title}
-              descripcion={item.description}
+              id={item.id}
+              title={item.title}
+              description={item.description}
               source={item.source}
+              esFavorito={esFavorito}
             />
           );
         }),
@@ -36,10 +40,9 @@ const crearCarrousel = (cadena) => {
   return carousel;
 };
 
-const Home = ({ imagenesSR, imagenesSSR, imagenesUR }) => {
+const Home = ({ imagenesFavoritas, imagenesSR, imagenesSSR, imagenesUR }) => {
   let carouselHtml;
-  const imagenes = { imagenesSR, imagenesSSR, imagenesUR };
-  console.log(imagenes);
+  const imagenes = { imagenesFavoritas, imagenesSR, imagenesSSR, imagenesUR };
   if (imagenes !== undefined) {
     carouselHtml = crearCarrousel(imagenes);
   }
@@ -54,6 +57,7 @@ const Home = ({ imagenesSR, imagenesSSR, imagenesUR }) => {
 
 const mapStateToProps = (state) => {
   return {
+    imagenesFavoritas: state.imagenesFavoritas,
     imagenesSR: state.imagenesSR,
     imagenesSSR: state.imagenesSSR,
     imagenesUR: state.imagenesUR,

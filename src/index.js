@@ -8,10 +8,11 @@ import App from './routes/App';
 const initialState = {
   user: {},
   playing: {},
+  imagenesFavoritas: [],
   imagenesSR: [],
   imagenesUR: [
     {
-      id: 1,
+      id: 'ur-1',
       title: 'Maki 1',
       type: 'Scripted',
       language: 'Español',
@@ -22,7 +23,7 @@ const initialState = {
         'https://raw.githubusercontent.com/SergioVG91/Makipedia/master/src/assets/static/maki_ur_1.jpg',
     },
     {
-      id: 2,
+      id: 'ur-2',
       title: 'Maki 2',
       type: 'Scripted',
       language: 'Español',
@@ -33,7 +34,7 @@ const initialState = {
         'https://raw.githubusercontent.com/SergioVG91/Makipedia/master/src/assets/static/maki_ur_2.jpg',
     },
     {
-      id: 3,
+      id: 'ur-3',
       title: 'Maki 3',
       type: 'Scripted',
       language: 'Español',
@@ -44,7 +45,7 @@ const initialState = {
         'https://raw.githubusercontent.com/SergioVG91/Makipedia/master/src/assets/static/maki_ur_3.jpg',
     },
     {
-      id: 4,
+      id: 'ur-4',
       title: 'Maki 4',
       type: 'Scripted',
       language: 'Español',
@@ -55,7 +56,7 @@ const initialState = {
         'https://raw.githubusercontent.com/SergioVG91/Makipedia/master/src/assets/static/maki_ur_4.jpg',
     },
     {
-      id: 5,
+      id: 'ur-5',
       title: 'Maki 5',
       type: 'Scripted',
       language: 'Español',
@@ -66,7 +67,7 @@ const initialState = {
         'https://raw.githubusercontent.com/SergioVG91/Makipedia/master/src/assets/static/maki_ur_5.jpg',
     },
     {
-      id: 6,
+      id: 'ur-6',
       title: 'Maki 6',
       type: 'Scripted',
       language: 'Español',
@@ -77,7 +78,7 @@ const initialState = {
         'https://raw.githubusercontent.com/SergioVG91/Makipedia/master/src/assets/static/maki_ur_6.jpg',
     },
     {
-      id: 7,
+      id: 'ur-7',
       title: 'Maki 7',
       type: 'Scripted',
       language: 'Español',
@@ -90,7 +91,7 @@ const initialState = {
   ],
   imagenesSSR: [
     {
-      id: 1,
+      id: 'ssr-1',
       title: 'Maki 1',
       type: 'Scripted',
       language: 'Español',
@@ -101,7 +102,7 @@ const initialState = {
         'https://raw.githubusercontent.com/SergioVG91/Makipedia/master/src/assets/static/maki_ssr_1.jpg',
     },
     {
-      id: 2,
+      id: 'ssr-2',
       title: 'Maki 2',
       type: 'Scripted',
       language: 'Español',
@@ -112,7 +113,7 @@ const initialState = {
         'https://raw.githubusercontent.com/SergioVG91/Makipedia/master/src/assets/static/maki_ssr_2.jpg',
     },
     {
-      id: 3,
+      id: 'ssr-3',
       title: 'Maki 3',
       type: 'Scripted',
       language: 'Español',
@@ -123,7 +124,7 @@ const initialState = {
         'https://raw.githubusercontent.com/SergioVG91/Makipedia/master/src/assets/static/maki_ssr_3.jpg',
     },
     {
-      id: 4,
+      id: 'ssr-4',
       title: 'Maki 4',
       type: 'Scripted',
       language: 'Español',
@@ -134,7 +135,7 @@ const initialState = {
         'https://raw.githubusercontent.com/SergioVG91/Makipedia/master/src/assets/static/maki_ssr_4.jpg',
     },
     {
-      id: 5,
+      id: 'ssr-5',
       title: 'Maki 5',
       type: 'Scripted',
       language: 'Español',
@@ -145,7 +146,7 @@ const initialState = {
         'https://raw.githubusercontent.com/SergioVG91/Makipedia/master/src/assets/static/maki_ssr_5.jpg',
     },
     {
-      id: 6,
+      id: 'ssr-6',
       title: 'Maki 6',
       type: 'Scripted',
       language: 'Español',
@@ -159,7 +160,6 @@ const initialState = {
 };
 
 const store = createStore(reducer, initialState);
-
 ReactDOM.render(
   <Provider store={store}>
     <App />
