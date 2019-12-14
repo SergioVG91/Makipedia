@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { setFavorite, eliminarItem } from '../actions';
 import '../assets/styles/components/carouselItem.scss';
 import imgAgregar from '../assets/static/agregar.png';
@@ -27,7 +28,10 @@ const CarouselItem = (props) => {
       <img className="carousel-item__img" src={source} alt="Maki 1" />
       <div className="carousel-item__details">
         <div className="carousel-item__details--img">
-          <img src={imgGuardar} alt="Guardar" />
+          <Link to={`/player/${id}`}>
+            <img src={imgGuardar} alt="Guardar" />
+          </Link>
+
           {esFavorito ? (
             <img src={imgEliminar} alt="Eliminar" onClick={() => handleEliminar(id)} />
           ) : (

@@ -17,12 +17,20 @@ const reducer = (state, action) => {
       };
     }
     case 'LOGIN_REQUEST': {
-      console.log('Recibido:');
-      console.log(action.payload);
       return {
         ...state,
         user: action.payload,
       };
+    }
+    case 'LOGOUT_REQUEST': {
+      return {
+        ...state,
+        user: action.payload,
+      };
+    }
+    case 'REGISTER_REQUEST': {
+      console.log(action.payload);
+      return state;
     }
     default:
       return state;
