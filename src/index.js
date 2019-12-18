@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import { createStore, compose } from 'redux';
 import reducer from './reducers';
 import App from './routes/App';
 
@@ -20,7 +20,7 @@ const initialState = {
         'https://raw.githubusercontent.com/SergioVG91/Makipedia/master/src/assets/static/maki_ur_1.jpg',
       description: 'Carta UR de Maki 1',
       source:
-        'https://raw.githubusercontent.com/SergioVG91/Makipedia/master/src/assets/static/maki_ur_1.jpg',
+        'https://github.com/SergioVG91/Makipedia/blob/feature/router-redux/src/assets/static/music_start.mp4?raw=true',
     },
     {
       id: 'ur-2',
@@ -159,7 +159,8 @@ const initialState = {
   ],
 };
 
-const store = createStore(reducer, initialState);
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const store = createStore(reducer, initialState, composeEnhancers());
 ReactDOM.render(
   <Provider store={store}>
     <App />

@@ -10,11 +10,12 @@ const Player = (props) => {
   const { id } = props.match.params;
   // eslint-disable-next-line react/destructuring-assignment
   const hasPlaying = Object.keys(props.playing).length > 0;
+
   useLayoutEffect(() => {
     props.getVideoSource(id);
   }, []);
   // eslint-disable-next-line react/destructuring-assignment
-  console.log(props.playing.source);
+
   return hasPlaying ? (
     <div className="Player">
       <video controls autoPlay>
