@@ -24,6 +24,7 @@ const crearCarrousel = (cadena) => {
               title={item.title}
               description={item.description}
               source={item.source}
+              cover={item.cover}
               esFavorito={esFavorito}
             />
           );

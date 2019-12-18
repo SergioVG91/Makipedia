@@ -32,6 +32,16 @@ const reducer = (state, action) => {
       console.log(action.payload);
       return state;
     }
+    case 'GET_VIDEO_SOURCE': {
+      return {
+        ...state,
+        playing:
+          state.imagenesUR.find((item) => item.id === action.payload) ||
+          state.imagenesSSR.find((item) => item.id === action.payload) ||
+          state.imagenesSR.find((item) => item.id === action.payload) ||
+          [],
+      };
+    }
     default:
       return state;
   }

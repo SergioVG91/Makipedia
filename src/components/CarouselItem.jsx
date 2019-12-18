@@ -8,7 +8,7 @@ import imgGuardar from '../assets/static/guardar.png';
 import imgEliminar from '../assets/static/eliminar.png';
 
 const CarouselItem = (props) => {
-  const { id, title, description, source, esFavorito } = props;
+  const { id, title, description, source, cover, esFavorito } = props;
   const handleSetFavorite = () => {
     props.setFavorite({
       key: id,
@@ -16,6 +16,7 @@ const CarouselItem = (props) => {
       title,
       description,
       source,
+      cover,
     });
   };
   const handleEliminar = (itemId) => {
@@ -25,7 +26,7 @@ const CarouselItem = (props) => {
   };
   return (
     <div className="carousel-item">
-      <img className="carousel-item__img" src={source} alt="Maki 1" />
+      <img className="carousel-item__img" src={cover} alt="Maki 1" />
       <div className="carousel-item__details">
         <div className="carousel-item__details--img">
           <Link to={`/player/${id}`}>

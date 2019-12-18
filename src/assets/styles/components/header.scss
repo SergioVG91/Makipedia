@@ -63,6 +63,8 @@
     &--profile img {
       margin-right: 8px;
       width: 50px;
+      border-radius: 100%;
+      object-fit: cover;
     }
 
     &--profile p {
