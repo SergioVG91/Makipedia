@@ -1,19 +1,23 @@
-.footer{
-    background-color: $color-footer-fondo;
-    display: flex;
-    align-items: center;
-    height: $size_footer;    
-    width: 100%;
-    & a{
-        @extend %style_text;
-        cursor: pointer;        
-        padding-left:30px;
-        text-decoration: none;
-        &:hover{
-            text-decoration: underline;
-        }
+@import '../base/variables.scss';
+@import '../base/mixins.scss';
+@import '../base/placeholders.scss';
+
+.footer {
+  background-color: $color-footer-fondo;
+  display: flex;
+  align-items: center;
+  height: $size_footer;
+  width: 100%;
+  & a {
+    @extend %style_text;
+    cursor: pointer;
+    padding-left: 30px;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
     }
-    @include respond-to{
-        @include flex-center-direction(column);            
-    }
+  }
+  @include respond-to {
+    @include flex-center-direction(column);
+  }
 }

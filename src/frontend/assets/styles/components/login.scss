@@ -1,3 +1,7 @@
+@import '../base/variables.scss';
+@import '../base/mixins.scss';
+@import '../base/placeholders.scss';
+
 .login {
   color: $color-texto;
   display: flex;

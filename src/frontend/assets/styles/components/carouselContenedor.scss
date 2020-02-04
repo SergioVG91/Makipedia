@@ -1,3 +1,7 @@
+@import '../base/variables.scss';
+@import '../base/mixins.scss';
+@import '../base/placeholders.scss';
+
 .carousel {
   width: 100%;
   overflow-x: scroll;

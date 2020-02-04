@@ -1,3 +1,7 @@
+@import '../base/variables.scss';
+@import '../base/mixins.scss';
+@import '../base/placeholders.scss';
+
 .error-404 {
   min-height: calc(100vh - #{$size_header} - #{$size_footer});
   @extend %flex-center;

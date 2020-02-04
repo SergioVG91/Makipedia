@@ -1,3 +1,7 @@
+@import '../base/variables.scss';
+@import '../base/mixins.scss';
+@import '../base/placeholders.scss';
+
 .header {
   background-color: $color-header-fondo;
   width: 100%;

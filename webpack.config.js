@@ -1,22 +1,31 @@
 /* eslint-disable indent */
 const path = require('path');
 //const HtmlWebPackPlugin = require('html-webpack-plugin');
-const MiniCssExctractPlugin = require('mini-css-extract-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const autoprefixer = require('autoprefixer');
 const webpack = require('webpack');
+const dotenv = require('dotenv');
+const TerserPlugin = require('terser-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
+const ManifestPlugin = require('webpack-manifest-plugin');
+
+dotenv.config();
+const isProd = process.env.NODE_ENV === 'production';
 
 module.exports = {
+  devtool: isProd ? 'hidden-source-map' : 'cheap-source-map',
   entry: './src/frontend/index.js',
-  mode: 'development',
+  mode: process.env.NODE_ENV,
   output: {
-    path: '/',
-    filename: 'assets/app.js',
+    path: isProd ? path.join(process.cwd(), './src/server/public') : '/',
+    filename: isProd ? 'assets/app-[hash].js' : 'assets/app.js',
     publicPath: '/',
   },
   resolve: {
     extensions: ['.js', '.jsx'],
   },
   optimization: {
+    minimizer: isProd ? [new TerserPlugin()] : [],
     splitChunks: {
       chunks: 'async',
       name: true,
@@ -26,12 +35,12 @@ module.exports = {
           chunks: 'all',
           reuseExistingChunk: true,
           priority: 1,
-          filename: 'assets/vendor.js',
+          filename: isProd ? 'assets/vendor-[hash].js' : 'assets/vendor.js',
           enforce: true,
           test(module, chunks) {
             const name = module.nameForCondition && module.nameForCondition();
             return chunks.some(
-              (chunk) => chunk.name !== 'vendor' && /[\\/]node_modules[\\/]/.test(name),
+              (chunks) => chunks.name !== 'vendors' && /[\\/]node_modules[\\/]/.test(name),
             );
           },
         },
@@ -49,41 +58,14 @@ module.exports = {
       },
       {
         test: /\.(s*)css$/,
+
         use: [
           {
-            loader: MiniCssExctractPlugin.loader,
-          },
-          'css-loader',
-          'postcss-loader',
-          {
-            loader: 'sass-loader',
-            options: {
-              prependData: `
-                @import 'src/frontend/assets/styles/base/_variables.scss';                
-                @import 'src/frontend/assets/styles/base/_placeholders.scss';                
-                @import 'src/frontend/assets/styles/base/_mixins.scss';
-                
-                `,
-            },
-          },
-        ],
-        /*   use: [
-          {
-            loader: MiniCssExctractPlugin.loader,
+            loader: MiniCssExtractPlugin.loader,
           },
           'css-loader',
           'sass-loader',
-          {
-            loader: 'sass-resources-loader',
-            options: {
-              resources: [
-                './src/assets/styles/base/_variables.scss',
-                './src/assets/styles/base/_placeholders.scss',
-                './src/assets/styles/base/_mixins.scss',
-              ],
-            },
-          },
-        ],*/
+        ],
       },
       {
         test: /\.(png|jpg|gif)$/,
@@ -112,8 +94,10 @@ module.exports = {
     //   template: './public/index.html',
     //   filename: './index.html',
     // }),
-    new MiniCssExctractPlugin({
-      filename: 'assets/app.css',
+    new MiniCssExtractPlugin({
+      filename: isProd ? 'assets/app-[hash].css' : 'assets/app.css',
     }),
+    isProd ? new CompressionPlugin({ test: /\.js$|\.css$/, filename: '[path].gz' }) : () => {},
+    isProd ? new ManifestPlugin() : () => {},
   ],
 };

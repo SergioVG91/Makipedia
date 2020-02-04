@@ -1,3 +1,7 @@
+@import '../base/variables.scss';
+@import '../base/mixins.scss';
+@import '../base/placeholders.scss';
+
 .categories {
   @extend %margenes_verticales;
   &__title {

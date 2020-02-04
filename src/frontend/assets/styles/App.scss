@@ -1,16 +1,17 @@
-*{
-  /*  outline: 2px solid red;*/
+@import './base/variables.scss';
+@import './base/mixins.scss';
+@import './base/placeholders.scss';
+
+body {
+  margin: 0px;
+  background-color: $color-fondo;
 }
-html,body {
-    margin:0px;           
-    background-color:$color-fondo;        
-}
-.contenido{
-    margin:0px;    
-    min-height: calc(100vh - #{$size_header} - #{$size_footer});              
-    
-    //box-sizing: border-box;
-    //height: 100%;
-    //padding-top: $size_header;
-    //padding-bottom: $size_footer;
+.contenido {
+  margin: 0px;
+  min-height: calc(100vh - #{$size_header} - #{$size_footer});
+
+  //box-sizing: border-box;
+  //height: 100%;
+  //padding-top: $size_header;
+  //padding-bottom: $size_footer;
 }
