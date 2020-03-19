@@ -1,0 +1,79 @@
+@import '../base/variables.scss';
+@import '../base/mixins.scss';
+@import '../base/placeholders.scss';
+
+.header {
+  background-color: $color-header-fondo;
+  width: 100%;
+  height: $size_header;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &__img {
+    & a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+    &--logo {
+      width: 45px;
+      margin-left: 15px;
+      margin-bottom: 10px;
+    }
+    &--letras {
+      align-items: center;
+      margin-left: 5px;
+
+      @extend %style_title_bold;
+    }
+  }
+
+  &__menu {
+    margin-right: 18px;
+    &:hover ul,
+    ul:hover {
+      display: block;
+    }
+    & ul {
+      display: none;
+      list-style: none;
+      padding: 0px 18px 0px 10px;
+      position: absolute;
+      width: 100px;
+      text-align: right;
+      margin: 0px 0px 0px -13px;
+      background-color: $color-header-fondo;
+      border-radius: 10%;
+    }
+
+    & li {
+      margin: 10px 0px;
+      & a {
+        @extend %style_text;
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    &--profile {
+      margin-right: 8px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    &--profile img {
+      margin-right: 8px;
+      width: 50px;
+      border-radius: 100%;
+      object-fit: cover;
+    }
+
+    &--profile p {
+      margin: 0px;
+      @extend %style_text;
+    }
+  }
+}

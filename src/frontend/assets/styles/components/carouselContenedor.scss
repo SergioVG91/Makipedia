@@ -1,0 +1,42 @@
+@import '../base/variables.scss';
+@import '../base/mixins.scss';
+@import '../base/placeholders.scss';
+
+.carousel {
+  width: 100%;
+  overflow-x: scroll;
+  /* padding: 0px 30px; Le aumenta al 100% 30px extra por lo que provoca scroll horizontal    */
+  &__container {
+    white-space: nowrap;
+    margin: 70px 0px;
+    /* padding-bottom: 10px; */
+    padding: 10px 30px;
+    &__container:hover .carousel-item {
+      opacity: 0.3;
+    }
+  }
+
+  &::-webkit-scrollbar {
+    width: 12px;
+    &-track {
+      -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0);
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0);
+      border-radius: 10px;
+      &:hover {
+        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 1);
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 1);
+        border-radius: 10px;
+      }
+    }
+    &-thumb {
+      border-radius: 10px;
+      -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 1);
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, 1);
+    }
+  }
+}
+
+.carousel__container:hover .carousel-item:hover {
+  transform: scale(1.5);
+  opacity: 1;
+}

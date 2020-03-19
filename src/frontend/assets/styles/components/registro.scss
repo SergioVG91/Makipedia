@@ -1,0 +1,66 @@
+@import '../base/variables.scss';
+@import '../base/mixins.scss';
+@import '../base/placeholders.scss';
+
+.register {
+  color: $color-texto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 30px;
+  min-height: calc(100vh - 120px);
+
+  &__container {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid $color-contorno;
+    border-radius: 40px;
+    padding: 60px 68px;
+    min-height: 700px;
+    width: 300px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+
+    @include respond-to {
+      background-color: transparent;
+      border: none;
+      padding: 0px;
+      width: 100%;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+  &__init {
+    display: flex;
+    justify-content: center;
+    & a {
+      font-size: 16px;
+      font-weight: bold;
+      text-decoration: none;
+      color: $color-texto;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.input {
+  &--register {
+    @extend %input;
+    background-color: transparent;
+    border-left: 0px;
+    border-right: 0px;
+    border-top: 0px;
+    margin: 0px 0px 20px 0px;
+    outline: none;
+  }
+}
+
+::placeholder {
+  color: $color-contorno;
+}
