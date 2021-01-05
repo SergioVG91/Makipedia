@@ -26,7 +26,7 @@
     "@hapi/boom": "^9.0.0",
     "asset-require-hook": "^1.2.0",
     "autoprefixer": "^9.7.3",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "babel-eslint": "^10.0.3",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-object-assign": "^6.22.0",
